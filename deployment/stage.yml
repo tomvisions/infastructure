@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - git config --global credential.helper '!aws --region us-east-1 codecommit credential-helper $@'
+      - git config --global credential.UseHttpPath true
+  pre_build:
+    commands:
+      - apt-get update && sudo apt-get install -y gnupg software-properties-common
+      - wget -O- https://apt.releases.hashicorp.com/gpg | \
+        gpg --dearmor | \
+        sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+      - gpg --no-default-keyring \
+        --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+        --fingerprint
+      - apt update
+        apt-get install terraform
+      - terraform -help
+  build:
+    commands:
+      - ls -al
