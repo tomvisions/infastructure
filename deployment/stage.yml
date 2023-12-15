@@ -18,5 +18,5 @@ phases:
 #      - terraform -help
   build:
     commands:
-      - npm run deploy-stage
+#      - npm run deploy-stage
 
