@@ -16,7 +16,7 @@ phases:
       - apt-get install terraform
   build:
     commands:
-      - echo Yes $TF_TOKEN | terraform login
+      - echo "Yes" "$TF_TOKEN" | terraform login
       - terraform init
       - terraform plan
 #      - npm run deploy-stage
