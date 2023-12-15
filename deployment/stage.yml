@@ -16,6 +16,7 @@ phases:
       - apt-get install terraform
   build:
     commands:
+      - terraform login
       - terraform init
       - terraform plan
 #      - npm run deploy-stage
