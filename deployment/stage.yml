@@ -18,7 +18,7 @@ phases:
     commands:
       - echo $TF_TOKEN
       - echo '"Yes" "TF_TOKEN" | terraform login'
-      - terraform init
-      - terraform plan
+     # - terraform init
+     # - terraform plan
 #      - npm run deploy-stage
 
